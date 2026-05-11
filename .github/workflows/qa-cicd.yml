@@ -239,7 +239,7 @@ jobs:
           cache-dependency-path: client/package-lock.json
 
       - name: Install client dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run client lint
         run: npm run lint --if-present
@@ -270,7 +270,7 @@ jobs:
           cache-dependency-path: server/package-lock.json
 
       - name: Install server dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run server lint
         run: npm run lint --if-present
