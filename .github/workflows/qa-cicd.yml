@@ -112,8 +112,7 @@ jobs:
           name: checkov-dockerfile-report
           path: checkov-dockerfile-report.json
           if-no-files-found: warn
-
-
+          
   client-trivy-fs:
     name: Client Trivy FS Scan
     runs-on: ubuntu-latest
