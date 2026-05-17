@@ -13,8 +13,6 @@ spec:
       labels:
         app: nodejs-app
     spec:
-      imagePullSecrets:
-      - name: regcred
       containers:
       - name: nodejs-app
         image: krishna0405/nodejs-app:25993775800
