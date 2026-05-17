@@ -434,20 +434,22 @@ jobs:
 
       - name: Run Trivy image scan (JSON)
         run: |
-          trivy image devopsshack/nodejs-app:${{ github.sha }} \
+          trivy image krishna0405/nodejs-app:${{ github.run_id }} \
             --format json \
             --output image-trivy-report.json \
             --severity HIGH,CRITICAL \
             --ignore-unfixed \
             --exit-code 0
+        continue-on-error: true
 
       - name: Run Trivy image scan (TABLE)
         run: |
-          trivy image devopsshack/nodejs-app:${{ github.sha }} \
+          trivy image krishna0405/nodejs-app:${{ github.run_id }} \
             --format table \
             --severity HIGH,CRITICAL \
             --ignore-unfixed \
             --exit-code 0 > image-trivy-report.txt
+        continue-on-error: true
 
       - name: Upload Trivy image JSON report
         uses: actions/upload-artifact@v4
@@ -474,7 +476,7 @@ jobs:
       - name: Generate image SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: devopsshack/nodejs-app:${{ github.sha }}
+          image: krishna0405/nodejs-app:${{ github.run_id }}
           format: spdx-json
           output-file: image-sbom.spdx.json
           upload-artifact: true  
@@ -484,8 +486,7 @@ jobs:
         with:
           push: true
           tags: |
-            devopsshack/nodejs-app:${{ github.sha }}
-            devopsshack/nodejs-app:latest
+            krishna0405/nodejs-app:${{ github.run_id }}
 
 
   update-qa-manifest:
