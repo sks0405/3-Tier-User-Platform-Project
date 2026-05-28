@@ -17,7 +17,7 @@ spec:
       - name: regcred
       containers:
       - name: nodejs-app
-        image: krishna0405/nodejs-app:prod-41bd8a4de4d68bfdc54725eb7849f1914f8c1317
+        image: krishna0405/nodejs-app:${{ github.run_id }}
         ports:
         - containerPort: 5000
         env:
