@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: krishna0405/nodejs-app:26570797229
+        image: krishna0405/nodejs-app:26571252098
         ports:
         - containerPort: 5000
         env:
