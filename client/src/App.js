@@ -53,7 +53,7 @@ function App() {
             </div>
             <h1>DevOps Shack User Management App</h1>
             <div className="form-container">
-                <input type="text" placeholder="New user name" value={name} onChange={(e) => setName(e.target.value)} />
+                <input type="text" placeholder="New user names" value={name} onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder="New user email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <select value={role} onChange={(e) => setRole(e.target.value)}>
                     <option value="">Select role</option>
