@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: krishna0405/nodejs-app:25993775800
+        image: krishna0405/nodejs-app:${{ github.run_id }}
         ports:
         - containerPort: 5000
         env:
